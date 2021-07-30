@@ -24,9 +24,9 @@ void addChar(String *str, char ch)
 	str->data[str->ptr++] = ch;
 }
 
-void addString(String *dec, char *src)
+void addString(String *dec, char *src, long len)
 {
-	while (*src)
+	while (len--)
 	{
 		addChar(dec, *src);
 		src++;
@@ -53,4 +53,10 @@ long getStringSize(String str)
 void freeString(String str)
 {
 	free(str.data);
+}
+
+char *toCString(String str)
+{
+	str.data[str.ptr] = 0;
+	return str.data;
 }

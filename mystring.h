@@ -10,9 +10,10 @@ typedef struct
 
 String initString();
 void addChar(String *str, char ch);
-void addString(String *dec, char *src);
+void addString(String *dec, char *src, long len);
 int isEqual(String src, char *dec);
 long getStringSize(String str);
 void freeString(String str);
+char *toCString(String str);
 
 #endif //MY_STRING
